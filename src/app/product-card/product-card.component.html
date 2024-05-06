@@ -1,0 +1,23 @@
+
+<div class="card">
+  <img [src]="ProductDetails.thumbnail" height="200" class="card-img-top" alt="{{ProductDetails.title}}" title="{{ProductDetails.title}}" (click)="handleProductdetails(ProductDetails.id)">
+  <div class="card-body">
+    <h6 class="card-title description-line">{{ProductDetails.title}} </h6>
+
+    <div class="description-line" >
+      {{ ProductDetails.description }}
+    </div>
+   <div class="d-flex justify-content-between flex-wrap">
+    <span><strong>Rating :</strong>{{ProductDetails.rating}}</span>
+    <strong>${{ProductDetails.price}}</strong>
+   </div>
+    <span class="badge rounded-pill text-bg-{{ ProductDetails.stock ? 'success' : 'danger' }}">
+      {{ ProductDetails.stock ? 'In Stock' : 'Out of Stock' }}
+    </span>
+    <div class="d-flex justify-content-center" >
+      <a href="#" class="btn my-3 {{ProductDetails.stock ? '' : 'disabled'}}"
+      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" >Add to Cart</a>
+    </div>
+
+  </div>
+</div>

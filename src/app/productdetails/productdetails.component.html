@@ -1,0 +1,38 @@
+<section class="product-details">
+  <div class="container ">
+      <div class="row">
+          <div class="col-lg-4 col-md-4">
+              <div class="product__details__pic">
+                  <div class="product__details__pic__item">
+                      <img  src="{{productDetails.thumbnail}}" alt="{{productDetails.title}}" class="img-fluid" >
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-8 col-md-8">
+              <div class="product__details__text">
+                  <h3>{{productDetails.title}}</h3>
+                  <div class="product__details__rating">
+
+                      <span><strong>Rating : </strong>{{productDetails.rating}}</span>
+                  </div>
+                  <div class="product__details__price"><strong>Price : </strong>${{productDetails.price}}</div>
+                  <p><strong>Description : </strong>{{productDetails.description}}</p>
+                  <p><strong>Category : </strong>{{productDetails.category}}</p>
+                  <div>
+                    <strong>Availability :</strong>
+                    <span class="fw-bold text-{{ productDetails.stock ? 'success' : 'danger' }}">
+                      {{ productDetails.stock ? 'In Stock' : 'Out of Stock' }}
+                    </span>
+                  </div>
+                  <div class="" >
+                    @if (productDetails.stock) {
+                      <a href="#" class="btn my-3 btn-dark" >Add to Cart</a>
+                    }
+                   </div>
+
+              </div>
+          </div>
+
+      </div>
+  </div>
+</section>
